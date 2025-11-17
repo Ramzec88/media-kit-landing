@@ -110,11 +110,11 @@
   --space-24: 24px;
   --space-32: 32px;
 
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-base: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
+  /* Border Radius - Rounded corners everywhere */
+  --radius-sm: 8px;
+  --radius-base: 12px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
   --radius-full: 9999px;
 
   /* Shadows */
@@ -748,46 +748,55 @@ select.form-control {
   --color-orange-400: rgba(230, 129, 97, 1);
   --color-orange-500: rgba(168, 75, 47, 1);
 
-  /* Custom colors for this landing - Mishka Maks Brand */
-  --color-brand-blue: #4A90E2;
-  --color-brand-blue-light: #7CB9E8;
-  --color-brand-blue-dark: #3A7BC8;
-  --color-gold: #ffd700;
+  /* New Color Palette - Professional & Trustworthy */
+  --color-deep-blue: #1E3A8A;
+  --color-coral: #FF6B6B;
+  --color-yellow: #FFD93D;
+  --color-soft-white: #F8F9FA;
+  --color-light-blue: #E3F2FD;
+  --color-dark-gray: #2D3748;
+  --color-mint: #6FEDD6;
   
-  /* RGB versions */
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  --color-slate-500-rgb: 98, 108, 113;
-  --color-brand-blue-rgb: 74, 144, 226;
-  --color-brand-blue-light-rgb: 124, 185, 232;
+  /* RGB versions for opacity control */
+  --color-deep-blue-rgb: 30, 58, 138;
+  --color-coral-rgb: 255, 107, 107;
+  --color-yellow-rgb: 255, 217, 61;
+  --color-light-blue-rgb: 227, 242, 253;
+  --color-dark-gray-rgb: 45, 55, 72;
+  --color-mint-rgb: 111, 237, 214;
 
   /* Professional unified background colors */
-  --color-bg-neutral: rgba(250, 250, 250, 1); /* Neutral light gray for section alternation */
-  --color-bg-accent: rgba(var(--color-brand-blue-rgb), 0.04); /* Very subtle brand accent */
-  --color-bg-highlight: rgba(var(--color-brand-blue-rgb), 0.06); /* Subtle highlight for important sections */
+  --color-bg-neutral: var(--color-light-blue);
+  --color-bg-accent: rgba(var(--color-deep-blue-rgb), 0.05);
+  --color-bg-highlight: rgba(var(--color-coral-rgb), 0.1);
 
-  /* Semantic tokens - Brand Colors */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-brand-blue);
-  --color-primary-hover: var(--color-brand-blue-dark);
-  --color-primary-active: var(--color-brand-blue-dark);
-  --color-secondary: rgba(var(--color-brand-blue-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brand-blue-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brand-blue-rgb), 0.25);
-  --color-border: rgba(var(--color-brand-blue-rgb), 0.15);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brand-blue-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brand-blue-rgb), 0.12);
-  --color-error: var(--color-red-500);
-  --color-success: #22C55E;
-  --color-warning: var(--color-orange-500);
-  --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-brand-blue-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+  /* Semantic tokens - New Brand Colors */
+  --color-background: var(--color-soft-white);
+  --color-surface: #FFFFFF;
+  --color-text: var(--color-dark-gray);
+  --color-text-secondary: rgba(var(--color-dark-gray-rgb), 0.7);
+  --color-primary: var(--color-deep-blue);
+  --color-primary-hover: #1E40AF;
+  --color-primary-active: #1E3A8A;
+  --color-secondary: rgba(var(--color-deep-blue-rgb), 0.1);
+  --color-secondary-hover: rgba(var(--color-deep-blue-rgb), 0.15);
+  --color-secondary-active: rgba(var(--color-deep-blue-rgb), 0.2);
+  --color-border: rgba(var(--color-deep-blue-rgb), 0.15);
+  --color-btn-primary-text: #FFFFFF;
+  --color-card-border: rgba(var(--color-deep-blue-rgb), 0.1);
+  --color-card-border-inner: rgba(var(--color-deep-blue-rgb), 0.08);
+  --color-error: var(--color-coral);
+  --color-success: #10B981;
+  --color-warning: var(--color-yellow);
+  --color-info: var(--color-dark-gray);
+  --color-focus-ring: rgba(var(--color-deep-blue-rgb), 0.3);
+  --color-select-caret: rgba(var(--color-dark-gray-rgb), 0.8);
+  
+  /* Accent colors */
+  --color-cta: var(--color-coral);
+  --color-cta-hover: #FF5252;
+  --color-stats: var(--color-yellow);
+  --color-icons: var(--color-mint);
 
   /* Typography */
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -823,11 +832,11 @@ select.form-control {
   --space-24: 24px;
   --space-32: 32px;
 
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-base: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
+  /* Border Radius - Rounded corners everywhere */
+  --radius-sm: 8px;
+  --radius-base: 12px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
   --radius-full: 9999px;
 
   /* Shadows */
@@ -852,33 +861,36 @@ select.form-control {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-gray-400-rgb: 119, 124, 124;
-    --color-teal-300-rgb: 50, 184, 198;
     --color-gray-300-rgb: 167, 169, 169;
     --color-gray-200-rgb: 245, 245, 245;
-    --color-bg-neutral: rgba(35, 37, 37, 1); /* Neutral dark gray for section alternation */
-    --color-bg-accent: rgba(var(--color-brand-blue-light-rgb), 0.08); /* Very subtle brand accent */
-    --color-bg-highlight: rgba(var(--color-brand-blue-light-rgb), 0.12); /* Subtle highlight for important sections */
-    --color-background: var(--color-charcoal-700);
-    --color-surface: var(--color-charcoal-800);
+    --color-bg-neutral: rgba(30, 58, 138, 0.2);
+    --color-bg-accent: rgba(var(--color-deep-blue-rgb), 0.15);
+    --color-bg-highlight: rgba(var(--color-coral-rgb), 0.2);
+    --color-background: #1A1F2E;
+    --color-surface: #252B3D;
     --color-text: var(--color-gray-200);
     --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-    --color-primary: var(--color-brand-blue-light);
-    --color-primary-hover: #9DD1F1;
-    --color-primary-active: var(--color-brand-blue);
-    --color-secondary: rgba(var(--color-brand-blue-light-rgb), 0.15);
-    --color-secondary-hover: rgba(var(--color-brand-blue-light-rgb), 0.25);
-    --color-secondary-active: rgba(var(--color-brand-blue-light-rgb), 0.3);
-    --color-border: rgba(var(--color-brand-blue-light-rgb), 0.2);
-    --color-error: var(--color-red-400);
-    --color-success: #4ADE80;
-    --color-warning: var(--color-orange-400);
+    --color-primary: #60A5FA;
+    --color-primary-hover: #93C5FD;
+    --color-primary-active: #3B82F6;
+    --color-secondary: rgba(96, 165, 250, 0.15);
+    --color-secondary-hover: rgba(96, 165, 250, 0.25);
+    --color-secondary-active: rgba(96, 165, 250, 0.3);
+    --color-border: rgba(96, 165, 250, 0.2);
+    --color-error: var(--color-coral);
+    --color-success: #34D399;
+    --color-warning: var(--color-yellow);
     --color-info: var(--color-gray-300);
-    --color-focus-ring: rgba(var(--color-brand-blue-light-rgb), 0.4);
-    --color-btn-primary-text: var(--color-slate-900);
-    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-focus-ring: rgba(96, 165, 250, 0.4);
+    --color-btn-primary-text: #FFFFFF;
+    --color-card-border: rgba(96, 165, 250, 0.15);
+    --color-card-border-inner: rgba(96, 165, 250, 0.1);
     --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+    --color-cta: var(--color-coral);
+    --color-cta-hover: #FF5252;
+    --color-stats: var(--color-yellow);
+    --color-icons: var(--color-mint);
   }
 }
 
@@ -963,7 +975,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-light) 100%);
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-light-blue) 100%);
   color: white;
   padding: var(--space-32) var(--space-16);
   position: relative;
@@ -1045,14 +1057,17 @@ body {
 }
 
 .btn-primary {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-brand-blue);
+  background: var(--color-cta);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0 4px 12px rgba(var(--color-coral-rgb), 0.3);
 }
 
 .btn-primary:hover {
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: var(--color-cta-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--color-coral-rgb), 0.4);
 }
 
 .btn-secondary {
@@ -1107,25 +1122,26 @@ body {
   border-radius: var(--radius-lg);
   padding: var(--space-32);
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(var(--color-deep-blue-rgb), 0.08);
   transition: all var(--duration-normal) var(--ease-standard);
   cursor: pointer;
 }
 
 .metric-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(var(--color-deep-blue-rgb), 0.12);
 }
 
 .metric-icon {
   font-size: 48px;
   margin-bottom: var(--space-16);
+  filter: hue-rotate(120deg) saturate(1.2);
 }
 
 .metric-number {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-deep-blue);
   margin-bottom: var(--space-8);
 }
 
@@ -1193,7 +1209,7 @@ body {
 
 .age-bar {
   flex: 1;
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-light) 100%);
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-light-blue) 100%);
   border-radius: var(--radius-base) var(--radius-base) 0 0;
   display: flex;
   align-items: flex-end;
@@ -1239,7 +1255,7 @@ body {
 
 .percentage {
   font-weight: var(--font-weight-medium);
-  color: var(--color-primary);
+  color: var(--color-deep-blue);
 }
 
 .interests-cloud {
@@ -1251,16 +1267,17 @@ body {
 }
 
 .interest-tag {
-  background: var(--color-bg-accent);
+  background: rgba(var(--color-mint-rgb), 0.2);
   padding: var(--space-8) var(--space-16);
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
   transition: all var(--duration-normal) var(--ease-standard);
+  color: var(--color-dark-gray);
 }
 
 .interest-tag:hover {
   transform: scale(1.05);
-  background: var(--color-bg-highlight);
+  background: rgba(var(--color-mint-rgb), 0.3);
 }
 
 /* Formats Section */
@@ -1367,7 +1384,7 @@ body {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-light) 100%);
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-light-blue) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1435,7 +1452,7 @@ body {
 }
 
 .carousel-btn:hover {
-  background: var(--color-primary);
+  background: var(--color-deep-blue);
   color: white;
   transform: translateY(-50%) scale(1.1);
 }
@@ -1465,7 +1482,7 @@ body {
 }
 
 .carousel-dot.active {
-  background: var(--color-primary);
+  background: var(--color-deep-blue);
   width: 30px;
 }
 
@@ -1558,7 +1575,7 @@ body {
   margin-top: var(--space-12);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-deep-blue);
 }
 
 .pricing-grid {
@@ -1681,15 +1698,15 @@ body {
 }
 
 .format-checkbox:hover .checkbox-label {
-  border-color: var(--color-primary);
+  border-color: var(--color-deep-blue);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(var(--color-deep-blue-rgb), 0.15);
 }
 
 .format-checkbox input[type="checkbox"]:checked + .checkbox-label {
-  border-color: var(--color-primary);
-  background: var(--color-bg-accent);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--color-deep-blue);
+  background: rgba(var(--color-deep-blue-rgb), 0.05);
+  box-shadow: 0 2px 8px rgba(var(--color-deep-blue-rgb), 0.15);
 }
 
 .format-name {
@@ -1701,7 +1718,7 @@ body {
 .format-price {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
-  color: var(--color-primary);
+  color: var(--color-deep-blue);
   margin-left: var(--space-12);
   white-space: nowrap;
 }
@@ -1716,16 +1733,17 @@ body {
 .pricing-discount {
   text-align: center;
   padding: var(--space-20);
-  background: var(--color-bg-highlight);
-  border-radius: var(--radius-base);
+  background: rgba(var(--color-yellow-rgb), 0.15);
+  border-radius: var(--radius-lg);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-lg);
+  border: 2px solid rgba(var(--color-yellow-rgb), 0.3);
 }
 
 .discount-icon {
   display: inline-block;
   margin-right: var(--space-8);
-  color: var(--color-success);
+  color: var(--color-stats);
   font-size: var(--font-size-xl);
 }
 
@@ -1759,8 +1777,9 @@ body {
 .case-stat {
   font-size: 48px;
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-stats);
   margin-bottom: var(--space-12);
+  text-shadow: 0 2px 8px rgba(var(--color-yellow-rgb), 0.3);
 }
 
 .case-label {
@@ -1795,12 +1814,12 @@ body {
   width: 150px;
   height: 150px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-blue-light) 100%);
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-light-blue) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 72px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(var(--color-deep-blue-rgb), 0.2);
 }
 
 .about-text h2 {
@@ -1808,7 +1827,7 @@ body {
 }
 
 .about-text h3 {
-  color: var(--color-primary);
+  color: var(--color-deep-blue);
   margin-bottom: var(--space-16);
 }
 
@@ -1831,7 +1850,7 @@ body {
 }
 
 .advantage-icon {
-  color: var(--color-success);
+  color: var(--color-icons);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
 }
@@ -1870,10 +1889,10 @@ body {
 }
 
 .social-icon:hover {
-  background: var(--color-primary);
+  background: var(--color-icons);
   color: white;
   transform: translateY(-4px) scale(1.1);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(var(--color-mint-rgb), 0.3);
 }
 
 /* FAQ Section */
@@ -1917,7 +1936,7 @@ body {
 }
 
 .faq-question:hover {
-  background: var(--color-bg-accent);
+  background: rgba(var(--color-light-blue-rgb), 0.5);
 }
 
 .faq-icon {
@@ -1949,8 +1968,14 @@ body {
 /* Contact Section */
 .contact {
   padding: calc(var(--space-32) * 2) var(--space-16);
-  background: var(--color-bg-highlight);
+  background: var(--color-cta);
   text-align: center;
+  color: white;
+}
+
+.contact .section-title,
+.contact .section-subtitle {
+  color: white;
 }
 
 .contact-buttons {
@@ -1961,8 +1986,32 @@ body {
   flex-wrap: wrap;
 }
 
+.contact-buttons .btn-primary {
+  background: white;
+  color: var(--color-cta);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-buttons .btn-primary:hover {
+  background: var(--color-yellow);
+  color: var(--color-dark-gray);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--color-yellow-rgb), 0.4);
+}
+
+.contact-buttons .btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.contact-buttons .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 .contact-response-time {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-32);
 }
 
@@ -2055,6 +2104,38 @@ textarea.form-control {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(var(--color-yellow-rgb), 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(var(--color-yellow-rgb), 0.8);
+  }
+}
+
+/* Micro-animations for interactive elements */
+.metric-card,
+.format-card,
+.case-card,
+.audience-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-stat {
+  animation: glow 2s ease-in-out infinite;
 }
 
 /* Responsive Design */
