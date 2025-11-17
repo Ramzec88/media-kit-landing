@@ -293,56 +293,58 @@
             <!-- Pricing Calculator -->
             <div class="calculator">
                 <h3>💰 Составьте свой пакет размещения</h3>
-                <div class="calculator-formats">
-                    <label class="format-checkbox">
-                        <input type="checkbox" name="format" value="1000" data-name="Пост в ленте Instagram" onchange="calculatePrice()">
-                        <span class="checkbox-label">
-                            <span class="format-name">📷 Пост в ленте Instagram</span>
-                            <span class="format-price">1 000₽</span>
-                        </span>
-                    </label>
-                    <label class="format-checkbox">
-                        <input type="checkbox" name="format" value="1000" data-name="Stories Instagram" onchange="calculatePrice()">
-                        <span class="checkbox-label">
-                            <span class="format-name">📲 Stories Instagram</span>
-                            <span class="format-price">1 000₽</span>
-                        </span>
-                    </label>
-                    <label class="format-checkbox">
-                        <input type="checkbox" name="format" value="1000" data-name="Рилс / Shorts" onchange="calculatePrice()">
-                        <span class="checkbox-label">
-                            <span class="format-name">🎥 Рилс / Shorts</span>
-                            <span class="format-price">1 000₽</span>
-                        </span>
-                    </label>
-                    <label class="format-checkbox">
-                        <input type="checkbox" name="format" value="1000" data-name="Интеграция в контент" onchange="calculatePrice()">
-                        <span class="checkbox-label">
-                            <span class="format-name">🎬 Интеграция в контент</span>
-                            <span class="format-price">1 000₽</span>
-                        </span>
-                    </label>
-                </div>
-                <div class="calculator-result" id="calculatorResult">
-                    <div class="result-breakdown">
-                        <span>Выбрано форматов:</span>
-                        <span id="formatCount">0</span>
+                <div class="calculator-wrapper">
+                    <div class="calculator-formats">
+                        <label class="format-checkbox">
+                            <input type="checkbox" name="format" value="1000" data-name="Пост в ленте Instagram" onchange="calculatePrice()">
+                            <span class="checkbox-label">
+                                <span class="format-name">📷 Пост в ленте Instagram</span>
+                                <span class="format-price">1 000₽</span>
+                            </span>
+                        </label>
+                        <label class="format-checkbox">
+                            <input type="checkbox" name="format" value="1000" data-name="Stories Instagram" onchange="calculatePrice()">
+                            <span class="checkbox-label">
+                                <span class="format-name">📲 Stories Instagram</span>
+                                <span class="format-price">1 000₽</span>
+                            </span>
+                        </label>
+                        <label class="format-checkbox">
+                            <input type="checkbox" name="format" value="1000" data-name="Рилс / Shorts" onchange="calculatePrice()">
+                            <span class="checkbox-label">
+                                <span class="format-name">🎥 Рилс / Shorts</span>
+                                <span class="format-price">1 000₽</span>
+                            </span>
+                        </label>
+                        <label class="format-checkbox">
+                            <input type="checkbox" name="format" value="1000" data-name="Интеграция в контент" onchange="calculatePrice()">
+                            <span class="checkbox-label">
+                                <span class="format-name">🎬 Интеграция в контент</span>
+                                <span class="format-price">1 000₽</span>
+                            </span>
+                        </label>
                     </div>
-                    <div class="result-breakdown">
-                        <span>Базовая цена:</span>
-                        <span id="basePrice">0₽</span>
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-breakdown">
+                            <span>Выбрано форматов:</span>
+                            <span id="formatCount">0</span>
+                        </div>
+                        <div class="result-breakdown">
+                            <span>Базовая цена:</span>
+                            <span id="basePrice">0₽</span>
+                        </div>
+                        <div class="result-breakdown discount-line" id="discountLine" style="display: none;">
+                            <span>Скидка <span id="discountPercent">0</span>%:</span>
+                            <span id="discountAmount">-0₽</span>
+                        </div>
+                        <div class="result-total">
+                            <span>Итого к оплате:</span>
+                            <span id="totalPrice">0₽</span>
+                        </div>
+                        <button class="btn btn-primary btn-full-width" id="orderButton" onclick="orderFormats()" style="margin-top: 16px; display: none;">
+                            📝 Заказать выбранные форматы
+                        </button>
                     </div>
-                    <div class="result-breakdown discount-line" id="discountLine" style="display: none;">
-                        <span>Скидка <span id="discountPercent">0</span>%:</span>
-                        <span id="discountAmount">-0₽</span>
-                    </div>
-                    <div class="result-total">
-                        <span>Итого к оплате:</span>
-                        <span id="totalPrice">0₽</span>
-                    </div>
-                    <button class="btn btn-primary btn-full-width" id="orderButton" onclick="orderFormats()" style="margin-top: 16px; display: none;">
-                        📝 Заказать выбранные форматы
-                    </button>
                 </div>
             </div>
 
