@@ -130,7 +130,7 @@ body {
 .container {
   max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0 var(--space-24);
+  padding: var(--space-32) var(--space-24);
 }
 
 /* === СЕКЦИИ === */
@@ -152,7 +152,8 @@ section {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
   text-align: center;
-  margin-bottom: var(--space-48);
+  margin-bottom: 0;
+  margin-top: var(--space-16);
   line-height: var(--line-height-relaxed);
   max-width: 600px;
   margin-left: auto;
@@ -323,7 +324,7 @@ section {
 /* === METRICS СЕКЦИЯ === */
 
 .metrics {
-  padding: var(--space-32) var(--space-16);
+  padding: var(--space-48) var(--space-16);
   margin-top: calc(var(--space-32) * -1);
   position: relative;
   z-index: 2;
@@ -333,6 +334,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-24);
+  margin-top: var(--space-24);
 }
 
 .metric-card {
@@ -378,7 +380,7 @@ section {
 /* === AUDIENCE СЕКЦИЯ === */
 
 .audience {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-light-blue);
 }
 
@@ -386,6 +388,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-24);
+  margin-top: var(--space-48);
 }
 
 .audience-card {
@@ -488,7 +491,7 @@ section {
 /* === FORMATS СЕКЦИЯ === */
 
 .formats {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-background);
 }
 
@@ -496,6 +499,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-24);
+  margin-top: var(--space-48);
 }
 
 .format-card {
@@ -555,13 +559,13 @@ section {
 /* === EXAMPLES/CAROUSEL СЕКЦИЯ === */
 
 .examples {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-light-blue);
 }
 
 .carousel {
   position: relative;
-  margin-top: var(--space-32);
+  margin-top: var(--space-48);
 }
 
 .carousel-container {
@@ -699,7 +703,7 @@ section {
 /* === PRICING СЕКЦИЯ === */
 
 .pricing {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-background);
 }
 
@@ -708,6 +712,7 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-32);
+  margin-top: var(--space-48);
   margin-bottom: var(--space-32);
   box-shadow: var(--shadow-sm);
 }
@@ -845,7 +850,7 @@ section {
 /* === CASES СЕКЦИЯ === */
 
 .cases {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-light-blue);
 }
 
@@ -853,6 +858,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-24);
+  margin-top: var(--space-48);
 }
 
 .case-card {
@@ -892,7 +898,7 @@ section {
 /* === ABOUT СЕКЦИЯ === */
 
 .about {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-background);
 }
 
@@ -901,7 +907,7 @@ section {
   gap: var(--space-32);
   align-items: center;
   max-width: 900px;
-  margin: 0 auto;
+  margin: var(--space-48) auto 0;
 }
 
 .about-avatar {
@@ -957,13 +963,13 @@ section {
 /* === SOCIAL LINKS СЕКЦИЯ === */
 
 .social-links {
-  padding: var(--space-32) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-light-blue);
   text-align: center;
 }
 
 .social-links h3 {
-  margin-bottom: var(--space-24);
+  margin-bottom: var(--space-32);
   font-size: var(--font-size-2xl);
   color: var(--color-text-primary);
 }
@@ -973,6 +979,7 @@ section {
   justify-content: center;
   gap: var(--space-24);
   flex-wrap: wrap;
+  margin-top: var(--space-24);
 }
 
 .social-icon {
@@ -999,13 +1006,13 @@ section {
 /* === FAQ СЕКЦИЯ === */
 
 .faq {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-background);
 }
 
 .faq-list {
   max-width: 800px;
-  margin: 0 auto;
+  margin: var(--space-48) auto 0;
 }
 
 .faq-item {
@@ -1070,7 +1077,7 @@ section {
 /* === CONTACT СЕКЦИЯ === */
 
 .contact {
-  padding: calc(var(--space-32) * 2) var(--space-16);
+  padding: var(--space-80) var(--space-16);
   background: var(--color-brand-accent);
   text-align: center;
   color: white;
@@ -1315,15 +1322,26 @@ textarea.form-control {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 var(--space-16);
+    padding: var(--space-24) var(--space-16);
   }
   
   section {
     padding: var(--space-48) 0;
   }
   
+  .metrics {
+    padding: var(--space-32) var(--space-16);
+  }
+  
   .metrics-grid {
     grid-template-columns: 1fr;
+    margin-top: var(--space-16);
+  }
+  
+  .audience-grid,
+  .formats-grid,
+  .cases-grid {
+    margin-top: var(--space-24);
   }
   
   .hero-title {
@@ -1332,5 +1350,17 @@ textarea.form-control {
   
   .section-title {
     font-size: var(--font-size-2xl);
+  }
+  
+  .calculator {
+    margin-top: var(--space-24);
+  }
+  
+  .about-content {
+    margin-top: var(--space-24);
+  }
+  
+  .faq-list {
+    margin-top: var(--space-24);
   }
 }
