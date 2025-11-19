@@ -658,16 +658,18 @@ section {
 .geo-item {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: var(--space-12);
-  align-items: start;
+  grid-template-rows: auto auto;
+  gap: var(--space-8) var(--space-12);
+  align-items: center;
 }
 
 .geo-header {
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  grid-column: 1 / -1;
-  margin-bottom: var(--space-4);
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
 }
 
 .geo-flag {
@@ -685,6 +687,7 @@ section {
   border-radius: var(--radius-full);
   overflow: hidden;
   grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 .geo-fill {
