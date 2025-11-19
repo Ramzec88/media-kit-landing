@@ -505,6 +505,9 @@ section {
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.8s var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .metric-card::before {
