@@ -974,24 +974,34 @@
         const packages = {
             test: {
                 services: ['ig-post', 'ig-stories'],
-                screens: ['screenProfile', 'screenStories']
+                screens: ['screenProfile', 'screenStories'],
+                fixedPrice: 1620,
+                discount: 10
             },
             hit: {
                 services: ['ig-post', 'ig-stories', 'ig-reels', 'tt-video', 'tg-post'],
-                screens: ['screenProfile', 'screenStories', 'screenReels', 'screenTiktok', 'screenTelegram']
+                screens: ['screenProfile', 'screenStories', 'screenReels', 'screenTiktok', 'screenTelegram'],
+                fixedPrice: 4590,
+                discount: 15
             },
             dominator: {
                 services: ['ig-post', 'ig-stories', 'ig-reels', 'tt-video', 'tt-duet', 'tg-post', 'bonus-link'],
-                screens: ['screenProfile', 'screenStories', 'screenReels', 'screenTiktok', 'screenTelegram']
+                screens: ['screenProfile', 'screenStories', 'screenReels', 'screenTiktok', 'screenTelegram'],
+                fixedPrice: 6320,
+                discount: 20
             }
         };
 
         let screenAnimationInterval = null;
+        let activePackage = null; // Track selected package
 
         // Select package function
         function selectPackage(packageId) {
             const pkg = packages[packageId];
             if (!pkg) return;
+
+            // Set active package for price calculation
+            activePackage = packageId;
 
             // Clear all checkboxes first
             document.querySelectorAll('input[name="service"]').forEach(cb => {
@@ -1101,6 +1111,18 @@
             updateBuilder();
         }
 
+        // Check if selected services match a package exactly
+        function isPackageMatch(pkg, checkedServices) {
+            const selectedIds = Array.from(checkedServices).map(cb => {
+                return cb.closest('[data-service-id]').dataset.serviceId;
+            });
+
+            if (selectedIds.length !== pkg.services.length) return false;
+
+            return pkg.services.every(id => selectedIds.includes(id)) &&
+                   selectedIds.every(id => pkg.services.includes(id));
+        }
+
         // Main update function
         function updateBuilder() {
             const checkedServices = document.querySelectorAll('input[name="service"]:checked');
@@ -1112,17 +1134,29 @@
                 basePrice += parseInt(cb.value);
             });
 
-            // Calculate discount
-            let discountPercent = 0;
-            for (let i = discountThresholds.length - 1; i >= 0; i--) {
-                if (count >= discountThresholds[i].count) {
-                    discountPercent = discountThresholds[i].percent;
-                    break;
+            // Check if current selection matches active package
+            let totalPrice, discountPercent;
+            const pkg = activePackage ? packages[activePackage] : null;
+
+            if (pkg && isPackageMatch(pkg, checkedServices)) {
+                // Use fixed package price
+                totalPrice = pkg.fixedPrice;
+                discountPercent = pkg.discount;
+            } else {
+                // Calculate discount normally
+                activePackage = null; // Reset if user changed selection
+                discountPercent = 0;
+                for (let i = discountThresholds.length - 1; i >= 0; i--) {
+                    if (count >= discountThresholds[i].count) {
+                        discountPercent = discountThresholds[i].percent;
+                        break;
+                    }
                 }
+                const discount = Math.round(basePrice * discountPercent / 100);
+                totalPrice = basePrice - discount;
             }
 
-            const discountAmount = Math.round(basePrice * discountPercent / 100);
-            const totalPrice = basePrice - discountAmount;
+            const discountAmount = basePrice - totalPrice;
 
             // Update counter
             document.getElementById('serviceCount').textContent = count;
