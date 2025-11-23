@@ -247,96 +247,169 @@
             <div class="builder-container">
                 <!-- Левая колонка: Контрольная панель -->
                 <div class="builder-controls">
-                    <!-- Платформа -->
+                    <!-- Instagram -->
                     <div class="builder-group">
-                        <h3 class="builder-group-title">Платформа</h3>
-                        <div class="builder-options">
-                            <label class="builder-radio active" data-platform="instagram">
-                                <input type="radio" name="platform" value="instagram" checked>
-                                <span class="builder-radio-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-                                    </svg>
+                        <div class="builder-platform-header">
+                            <svg class="builder-platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                            </svg>
+                            <h3 class="builder-group-title">Instagram</h3>
+                            <span class="builder-platform-subs">119K</span>
+                        </div>
+                        <div class="builder-services">
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="1000" data-platform="instagram" data-format="post" data-reach="50K" data-clicks="2K">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Post в ленте</span>
+                                    <span class="builder-service-stats">~50K охват</span>
                                 </span>
-                                <span class="builder-radio-text">Instagram</span>
+                                <span class="builder-service-price">1 000₽</span>
                             </label>
-                            <label class="builder-radio" data-platform="tiktok">
-                                <input type="radio" name="platform" value="tiktok">
-                                <span class="builder-radio-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.66 0 2.89 2.89 0 0 1 5.66-.03v-3.4a6.29 6.29 0 0 0-5.66 3.43 6.29 6.29 0 0 0 5.66 9.17 6.3 6.3 0 0 0 5.66-3.43v-3.4a9.13 9.13 0 0 0 3.77 1.04V9.45a4.83 4.83 0 0 1-.92-.76z"/>
-                                    </svg>
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="800" data-platform="instagram" data-format="stories" data-reach="15K" data-clicks="800">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Stories (5-7 шт)</span>
+                                    <span class="builder-service-stats">~15K охват</span>
                                 </span>
-                                <span class="builder-radio-text">TikTok</span>
+                                <span class="builder-service-price">800₽</span>
                             </label>
-                            <label class="builder-radio" data-platform="telegram">
-                                <input type="radio" name="platform" value="telegram">
-                                <span class="builder-radio-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                                    </svg>
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="1500" data-platform="instagram" data-format="reels" data-reach="80K" data-clicks="4K">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Reels интеграция</span>
+                                    <span class="builder-service-stats">~80K охват</span>
                                 </span>
-                                <span class="builder-radio-text">Telegram</span>
+                                <span class="builder-service-price">1 500₽</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Формат -->
+                    <!-- TikTok -->
                     <div class="builder-group">
-                        <h3 class="builder-group-title">Формат</h3>
-                        <div class="builder-options" id="formatOptions">
-                            <label class="builder-radio active" data-format="post">
-                                <input type="radio" name="format" value="post" checked>
-                                <span class="builder-radio-text">Post</span>
-                                <span class="builder-radio-price">1 000₽</span>
+                        <div class="builder-platform-header">
+                            <svg class="builder-platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.66 0 2.89 2.89 0 0 1 5.66-.03v-3.4a6.29 6.29 0 0 0-5.66 3.43 6.29 6.29 0 0 0 5.66 9.17 6.3 6.3 0 0 0 5.66-3.43v-3.4a9.13 9.13 0 0 0 3.77 1.04V9.45a4.83 4.83 0 0 1-.92-.76z"/>
+                            </svg>
+                            <h3 class="builder-group-title">TikTok</h3>
+                            <span class="builder-platform-subs">67K</span>
+                        </div>
+                        <div class="builder-services">
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="1500" data-platform="tiktok" data-format="video" data-reach="100K" data-clicks="5K">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Видео интеграция</span>
+                                    <span class="builder-service-stats">~100K охват</span>
+                                </span>
+                                <span class="builder-service-price">1 500₽</span>
                             </label>
-                            <label class="builder-radio" data-format="stories">
-                                <input type="radio" name="format" value="stories">
-                                <span class="builder-radio-text">Stories</span>
-                                <span class="builder-radio-price">800₽</span>
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="2000" data-platform="tiktok" data-format="duet" data-reach="150K" data-clicks="8K">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Дуэт / Реакция</span>
+                                    <span class="builder-service-stats">~150K охват</span>
+                                </span>
+                                <span class="builder-service-price">2 000₽</span>
                             </label>
-                            <label class="builder-radio" data-format="reels">
-                                <input type="radio" name="format" value="reels">
-                                <span class="builder-radio-text">Reels</span>
-                                <span class="builder-radio-price">1 500₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="builder-group">
+                        <div class="builder-platform-header">
+                            <svg class="builder-platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                            <h3 class="builder-group-title">Telegram</h3>
+                            <span class="builder-platform-subs">4K</span>
+                        </div>
+                        <div class="builder-services">
+                            <label class="builder-service">
+                                <input type="checkbox" name="service" value="600" data-platform="telegram" data-format="post" data-reach="3K" data-clicks="300">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Пост в канале</span>
+                                    <span class="builder-service-stats">~3K охват</span>
+                                </span>
+                                <span class="builder-service-price">600₽</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Дополнительные опции -->
-                    <div class="builder-group">
-                        <h3 class="builder-group-title">Дополнительно</h3>
-                        <div class="builder-addons">
-                            <label class="builder-checkbox">
-                                <input type="checkbox" name="addon" value="500" data-addon="link">
-                                <span class="builder-checkbox-mark"></span>
-                                <span class="builder-checkbox-text">Ссылка в шапке</span>
-                                <span class="builder-checkbox-price">+500₽</span>
+                    <div class="builder-group builder-extras">
+                        <h3 class="builder-group-title">Бонусы</h3>
+                        <div class="builder-services">
+                            <label class="builder-service builder-service-bonus">
+                                <input type="checkbox" name="service" value="500" data-platform="bonus" data-format="link" data-reach="+" data-clicks="+">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Ссылка в шапке профиля</span>
+                                    <span class="builder-service-stats">7 дней</span>
+                                </span>
+                                <span class="builder-service-price">+500₽</span>
                             </label>
-                            <label class="builder-checkbox">
-                                <input type="checkbox" name="addon" value="1000" data-addon="permanent">
-                                <span class="builder-checkbox-mark"></span>
-                                <span class="builder-checkbox-text">Вечное сохранение</span>
-                                <span class="builder-checkbox-price">+1 000₽</span>
+                            <label class="builder-service builder-service-bonus">
+                                <input type="checkbox" name="service" value="1000" data-platform="bonus" data-format="permanent" data-reach="+" data-clicks="+">
+                                <span class="builder-service-check"></span>
+                                <span class="builder-service-info">
+                                    <span class="builder-service-name">Вечное сохранение поста</span>
+                                    <span class="builder-service-stats">навсегда</span>
+                                </span>
+                                <span class="builder-service-price">+1 000₽</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Итоговая цена -->
-                    <div class="builder-total">
-                        <div class="builder-total-label">Итого:</div>
-                        <div class="builder-total-price" id="builderTotalPrice">1 000₽</div>
-                    </div>
+                    <!-- Итоговый блок -->
+                    <div class="builder-summary">
+                        <!-- Счетчик выбранного -->
+                        <div class="builder-counter">
+                            <span class="builder-counter-label">Выбрано услуг:</span>
+                            <span class="builder-counter-value" id="serviceCount">0</span>
+                        </div>
 
-                    <!-- CTA кнопка -->
-                    <button class="btn btn-primary btn-full builder-cta" onclick="orderCampaign()">
-                        Заказать этот микс
-                    </button>
+                        <!-- Скидка -->
+                        <div class="builder-discount hidden" id="discountBlock">
+                            <div class="builder-discount-badge">
+                                <span class="discount-icon">🎁</span>
+                                <span class="discount-text">Скидка <span id="discountPercent">10</span>%</span>
+                            </div>
+                            <div class="builder-discount-amount">-<span id="discountAmount">0</span>₽</div>
+                        </div>
 
-                    <div class="builder-hint">
-                        <p>При заказе от 3 форматов — скидка 10%</p>
+                        <!-- Прогресс до скидки -->
+                        <div class="builder-discount-progress" id="discountProgress">
+                            <div class="discount-progress-text">
+                                Добавьте еще <span id="servicesNeeded">3</span> услуг для скидки 10%
+                            </div>
+                            <div class="discount-progress-bar">
+                                <div class="discount-progress-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Итоговая цена -->
+                        <div class="builder-total">
+                            <div class="builder-total-row">
+                                <span class="builder-total-label">Базовая стоимость:</span>
+                                <span class="builder-total-base" id="basePrice">0₽</span>
+                            </div>
+                            <div class="builder-total-row builder-total-final">
+                                <span class="builder-total-label">Итого:</span>
+                                <span class="builder-total-price" id="builderTotalPrice">0₽</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA кнопка -->
+                        <button class="btn btn-primary btn-full builder-cta" id="orderBtn" onclick="orderCampaign()" disabled>
+                            Выберите хотя бы одну услугу
+                        </button>
                     </div>
                 </div>
 
@@ -549,6 +622,10 @@
 
             <div class="formats-note">
                 <p>При партнерстве от 3 месяцев — скидка до 20% и гибкий график размещений</p>
+            </div>
+
+            <div class="builder-hint">
+                <p>Цена указана за одно размещение. Выберите несколько услуг и получите скидку до 20%!</p>
             </div>
         </div>
     </section>
@@ -808,168 +885,189 @@
             }
         });
 
-        // === CAMPAIGN BUILDER ===
+        // === CAMPAIGN BUILDER (Multi-select version) ===
 
-        // Pricing data
-        const pricing = {
-            instagram: {
-                post: 1000,
-                stories: 800,
-                reels: 1500
-            },
-            tiktok: {
-                post: 1200,
-                stories: 0, // No stories on TikTok
-                reels: 1500
-            },
-            telegram: {
-                post: 600,
-                stories: 0, // No stories on Telegram
-                reels: 0 // No reels on Telegram
-            }
-        };
-
-        // Stats data for tooltips
-        const statsData = {
-            instagram: {
-                post: { reach: '50K', clicks: '2K' },
-                stories: { reach: '15K', clicks: '800' },
-                reels: { reach: '80K', clicks: '4K' }
-            },
-            tiktok: {
-                post: { reach: '100K', clicks: '5K' },
-                stories: { reach: '0', clicks: '0' },
-                reels: { reach: '100K', clicks: '5K' }
-            },
-            telegram: {
-                post: { reach: '3K', clicks: '300' },
-                stories: { reach: '0', clicks: '0' },
-                reels: { reach: '0', clicks: '0' }
-            }
-        };
-
-        // Current state
-        let currentPlatform = 'instagram';
-        let currentFormat = 'post';
+        // Discount thresholds
+        const discountThresholds = [
+            { count: 3, percent: 10 },
+            { count: 5, percent: 15 },
+            { count: 7, percent: 20 }
+        ];
 
         // Initialize builder
         function initBuilder() {
-            // Platform radio buttons
-            document.querySelectorAll('input[name="platform"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    currentPlatform = this.value;
-                    updatePlatformUI();
-                    updateFormatOptions();
-                    updatePhoneScreen();
-                    updatePrice();
-                });
-            });
-
-            // Format radio buttons
-            document.querySelectorAll('input[name="format"]').forEach(radio => {
-                radio.addEventListener('change', function() {
-                    currentFormat = this.value;
-                    updateFormatUI();
-                    updatePhoneScreen();
-                    updatePrice();
-                });
-            });
-
-            // Addon checkboxes
-            document.querySelectorAll('input[name="addon"]').forEach(checkbox => {
+            // Service checkboxes
+            document.querySelectorAll('input[name="service"]').forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
-                    updatePrice();
+                    updateBuilder();
+                    updatePhoneScreen();
                 });
             });
 
             // Initial setup
-            updateFormatOptions();
-            updatePrice();
+            updateBuilder();
         }
 
-        // Update platform UI (active state)
-        function updatePlatformUI() {
-            document.querySelectorAll('.builder-radio[data-platform]').forEach(label => {
-                if (label.dataset.platform === currentPlatform) {
-                    label.classList.add('active');
-                } else {
-                    label.classList.remove('active');
-                }
+        // Main update function
+        function updateBuilder() {
+            const checkedServices = document.querySelectorAll('input[name="service"]:checked');
+            const count = checkedServices.length;
+
+            // Calculate base price
+            let basePrice = 0;
+            checkedServices.forEach(cb => {
+                basePrice += parseInt(cb.value);
             });
-        }
 
-        // Update format UI (active state)
-        function updateFormatUI() {
-            document.querySelectorAll('.builder-radio[data-format]').forEach(label => {
-                if (label.dataset.format === currentFormat) {
-                    label.classList.add('active');
-                } else {
-                    label.classList.remove('active');
+            // Calculate discount
+            let discountPercent = 0;
+            for (let i = discountThresholds.length - 1; i >= 0; i--) {
+                if (count >= discountThresholds[i].count) {
+                    discountPercent = discountThresholds[i].percent;
+                    break;
                 }
-            });
+            }
+
+            const discountAmount = Math.round(basePrice * discountPercent / 100);
+            const totalPrice = basePrice - discountAmount;
+
+            // Update counter
+            document.getElementById('serviceCount').textContent = count;
+
+            // Update base price
+            document.getElementById('basePrice').textContent = `${basePrice.toLocaleString('ru-RU')}₽`;
+
+            // Update discount block
+            const discountBlock = document.getElementById('discountBlock');
+            const discountProgress = document.getElementById('discountProgress');
+
+            if (discountPercent > 0) {
+                discountBlock.classList.remove('hidden');
+                discountProgress.classList.add('hidden');
+                document.getElementById('discountPercent').textContent = discountPercent;
+                document.getElementById('discountAmount').textContent = discountAmount.toLocaleString('ru-RU');
+            } else {
+                discountBlock.classList.add('hidden');
+                discountProgress.classList.remove('hidden');
+
+                // Calculate progress to next discount
+                const nextThreshold = discountThresholds[0];
+                const servicesNeeded = nextThreshold.count - count;
+                const progressPercent = Math.min(100, (count / nextThreshold.count) * 100);
+
+                document.getElementById('servicesNeeded').textContent = servicesNeeded;
+                document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            }
+
+            // Update total price
+            document.getElementById('builderTotalPrice').textContent = `${totalPrice.toLocaleString('ru-RU')}₽`;
+
+            // Update order button
+            const orderBtn = document.getElementById('orderBtn');
+            if (count > 0) {
+                orderBtn.disabled = false;
+                orderBtn.textContent = `Заказать сборку за ${totalPrice.toLocaleString('ru-RU')}₽`;
+            } else {
+                orderBtn.disabled = true;
+                orderBtn.textContent = 'Выберите хотя бы одну услугу';
+            }
         }
 
-        // Update available format options based on platform
-        function updateFormatOptions() {
-            const formatOptions = document.getElementById('formatOptions');
-            const platformPricing = pricing[currentPlatform];
-
-            document.querySelectorAll('.builder-radio[data-format]').forEach(label => {
-                const format = label.dataset.format;
-                const price = platformPricing[format];
-                const priceSpan = label.querySelector('.builder-radio-price');
-
-                if (price === 0 || price === undefined) {
-                    label.style.display = 'none';
-                    // If current format is hidden, switch to first available
-                    if (format === currentFormat) {
-                        const firstAvailable = Object.keys(platformPricing).find(f => platformPricing[f] > 0);
-                        if (firstAvailable) {
-                            currentFormat = firstAvailable;
-                            document.querySelector(`input[name="format"][value="${firstAvailable}"]`).checked = true;
-                            updateFormatUI();
-                        }
-                    }
-                } else {
-                    label.style.display = 'flex';
-                    if (priceSpan) {
-                        priceSpan.textContent = `${price.toLocaleString('ru-RU')}₽`;
-                    }
-                }
-            });
-        }
-
-        // Update phone screen based on selection
+        // Update phone screen based on selected services
         function updatePhoneScreen() {
-            // Hide all screens
+            const checkedServices = document.querySelectorAll('input[name="service"]:checked');
+
+            // Hide all screens first
             document.querySelectorAll('.screen-content').forEach(screen => {
                 screen.classList.add('hidden');
             });
 
+            if (checkedServices.length === 0) {
+                // Show default Instagram profile
+                document.getElementById('screenProfile').classList.remove('hidden');
+                return;
+            }
+
+            // Find the last selected service (for main display)
+            const lastSelected = checkedServices[checkedServices.length - 1];
+            const platform = lastSelected.dataset.platform;
+            const format = lastSelected.dataset.format;
+
             // Show appropriate screen
-            if (currentPlatform === 'telegram') {
+            if (platform === 'telegram') {
                 document.getElementById('screenTelegram').classList.remove('hidden');
-            } else if (currentPlatform === 'tiktok') {
+            } else if (platform === 'tiktok') {
                 document.getElementById('screenTiktok').classList.remove('hidden');
-            } else if (currentPlatform === 'instagram') {
-                if (currentFormat === 'stories') {
+            } else if (platform === 'instagram') {
+                if (format === 'stories') {
                     document.getElementById('screenStories').classList.remove('hidden');
-                } else if (currentFormat === 'reels') {
+                } else if (format === 'reels') {
                     document.getElementById('screenReels').classList.remove('hidden');
+                } else {
+                    document.getElementById('screenProfile').classList.remove('hidden');
+                }
+            } else if (platform === 'bonus') {
+                // For bonuses, show last non-bonus selection or default
+                const nonBonusServices = [...checkedServices].filter(cb => cb.dataset.platform !== 'bonus');
+                if (nonBonusServices.length > 0) {
+                    const last = nonBonusServices[nonBonusServices.length - 1];
+                    updateScreenForService(last);
                 } else {
                     document.getElementById('screenProfile').classList.remove('hidden');
                 }
             }
 
-            // Update tooltip stats
-            updateTooltipStats();
+            // Update tooltip stats with combined reach
+            updateCombinedStats();
         }
 
-        // Update tooltip statistics
-        function updateTooltipStats() {
-            const stats = statsData[currentPlatform][currentFormat];
+        function updateScreenForService(service) {
+            const platform = service.dataset.platform;
+            const format = service.dataset.format;
 
-            // Update all tooltips with relevant stats
+            if (platform === 'telegram') {
+                document.getElementById('screenTelegram').classList.remove('hidden');
+            } else if (platform === 'tiktok') {
+                document.getElementById('screenTiktok').classList.remove('hidden');
+            } else if (platform === 'instagram') {
+                if (format === 'stories') {
+                    document.getElementById('screenStories').classList.remove('hidden');
+                } else if (format === 'reels') {
+                    document.getElementById('screenReels').classList.remove('hidden');
+                } else {
+                    document.getElementById('screenProfile').classList.remove('hidden');
+                }
+            }
+        }
+
+        // Update combined stats in tooltips
+        function updateCombinedStats() {
+            const checkedServices = document.querySelectorAll('input[name="service"]:checked');
+
+            let totalReach = 0;
+            let totalClicks = 0;
+
+            checkedServices.forEach(cb => {
+                const reach = cb.dataset.reach;
+                const clicks = cb.dataset.clicks;
+
+                if (reach && reach !== '+') {
+                    totalReach += parseFloat(reach.replace('K', '')) * 1000;
+                }
+                if (clicks && clicks !== '+') {
+                    totalClicks += parseFloat(clicks.replace('K', '')) * 1000;
+                }
+            });
+
+            // Format numbers
+            const formatNum = (num) => {
+                if (num >= 1000) {
+                    return `${(num / 1000).toFixed(0)}K`;
+                }
+                return num.toString();
+            };
+
+            // Update all tooltips
             const tooltipSelectors = [
                 '#adTooltip', '#storiesTooltip', '#reelsTooltip',
                 '#tiktokTooltip', '#telegramTooltip'
@@ -980,65 +1078,94 @@
                 if (tooltip) {
                     const statElements = tooltip.querySelectorAll('.tooltip-stat span:last-child');
                     if (statElements.length >= 2) {
-                        statElements[0].textContent = `Охват ~${stats.reach}`;
-                        statElements[1].textContent = `Переходов ~${stats.clicks}`;
+                        statElements[0].textContent = `Охват ~${formatNum(totalReach) || '0'}`;
+                        statElements[1].textContent = `Переходов ~${formatNum(totalClicks) || '0'}`;
                     }
                 }
             });
         }
 
-        // Calculate and update total price
-        function updatePrice() {
-            const basePrice = pricing[currentPlatform][currentFormat] || 0;
-
-            let addonsPrice = 0;
-            document.querySelectorAll('input[name="addon"]:checked').forEach(checkbox => {
-                addonsPrice += parseInt(checkbox.value);
-            });
-
-            const total = basePrice + addonsPrice;
-
-            document.getElementById('builderTotalPrice').textContent =
-                `${total.toLocaleString('ru-RU')}₽`;
-        }
-
         // Order campaign function
         function orderCampaign() {
-            const basePrice = pricing[currentPlatform][currentFormat] || 0;
+            const checkedServices = document.querySelectorAll('input[name="service"]:checked');
 
-            let addonsPrice = 0;
-            const addons = [];
-            document.querySelectorAll('input[name="addon"]:checked').forEach(checkbox => {
-                addonsPrice += parseInt(checkbox.value);
-                addons.push(checkbox.dataset.addon === 'link' ? 'Ссылка в шапке' : 'Вечное сохранение');
+            if (checkedServices.length === 0) {
+                return;
+            }
+
+            // Calculate totals
+            let basePrice = 0;
+            const selectedItems = [];
+
+            checkedServices.forEach(cb => {
+                basePrice += parseInt(cb.value);
+                const platform = cb.dataset.platform;
+                const format = cb.dataset.format;
+                const price = parseInt(cb.value);
+                const name = cb.closest('.builder-service').querySelector('.builder-service-name').textContent;
+
+                selectedItems.push({
+                    platform: platform,
+                    name: name,
+                    price: price
+                });
             });
 
-            const total = basePrice + addonsPrice;
+            // Calculate discount
+            const count = checkedServices.length;
+            let discountPercent = 0;
+            for (let i = discountThresholds.length - 1; i >= 0; i--) {
+                if (count >= discountThresholds[i].count) {
+                    discountPercent = discountThresholds[i].percent;
+                    break;
+                }
+            }
 
-            // Platform names
-            const platformNames = {
-                instagram: 'Instagram',
-                tiktok: 'TikTok',
-                telegram: 'Telegram'
-            };
+            const discountAmount = Math.round(basePrice * discountPercent / 100);
+            const totalPrice = basePrice - discountAmount;
 
-            // Format names
-            const formatNames = {
-                post: 'Post',
-                stories: 'Stories',
-                reels: 'Reels'
-            };
+            // Group by platform
+            const grouped = {};
+            selectedItems.forEach(item => {
+                if (!grouped[item.platform]) {
+                    grouped[item.platform] = [];
+                }
+                grouped[item.platform].push(item);
+            });
 
             // Create order message
             let message = `Здравствуйте! Хочу заказать рекламу:\n\n`;
-            message += `📱 Платформа: ${platformNames[currentPlatform]}\n`;
-            message += `📋 Формат: ${formatNames[currentFormat]}\n`;
 
-            if (addons.length > 0) {
-                message += `➕ Дополнительно: ${addons.join(', ')}\n`;
+            const platformEmoji = {
+                instagram: '📸',
+                tiktok: '🎵',
+                telegram: '✈️',
+                bonus: '🎁'
+            };
+
+            const platformNames = {
+                instagram: 'Instagram',
+                tiktok: 'TikTok',
+                telegram: 'Telegram',
+                bonus: 'Бонусы'
+            };
+
+            Object.keys(grouped).forEach(platform => {
+                message += `${platformEmoji[platform]} ${platformNames[platform]}:\n`;
+                grouped[platform].forEach(item => {
+                    message += `  • ${item.name} — ${item.price.toLocaleString('ru-RU')}₽\n`;
+                });
+                message += '\n';
+            });
+
+            message += `📊 Итого услуг: ${count}\n`;
+            message += `💰 Базовая стоимость: ${basePrice.toLocaleString('ru-RU')}₽\n`;
+
+            if (discountPercent > 0) {
+                message += `🎁 Скидка ${discountPercent}%: -${discountAmount.toLocaleString('ru-RU')}₽\n`;
             }
 
-            message += `\n💰 Стоимость: ${total.toLocaleString('ru-RU')}₽\n\n`;
+            message += `\n✅ К оплате: ${totalPrice.toLocaleString('ru-RU')}₽\n\n`;
             message += `Свяжитесь со мной для обсуждения деталей!`;
 
             // Open Telegram with message
