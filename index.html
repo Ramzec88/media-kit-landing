@@ -605,52 +605,31 @@
 
                     <!-- Итоговый блок -->
                     <div class="builder-summary">
-                        <!-- Счетчик выбранного -->
-                        <div class="builder-counter">
-                            <span class="builder-counter-label">Выбрано услуг:</span>
-                            <span class="builder-counter-value" id="serviceCount">0</span>
-                        </div>
-
-                        <!-- Скидка -->
-                        <div class="builder-discount hidden" id="discountBlock">
-                            <div class="builder-discount-badge">
-                                <span class="discount-icon">
-                                    <svg style="width: 20px; height: 20px; display: inline-block; vertical-align: middle;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20 12L22 10L20 8L22 6L18 2L16 4L14 2L12 4L10 2L8 4L6 2L2 6L4 8L2 10L4 12L2 14L4 16L2 18L6 22L8 20L10 22L12 20L14 22L16 20L18 22L22 18L20 16L22 14L20 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M9 9L15 15M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </span>
-                                <span class="discount-text">Скидка <span id="discountPercent">10</span>%</span>
+                        <div class="summary-header">
+                            <div class="summary-info">
+                                Выбрано: <span id="serviceCount">0</span>
                             </div>
-                            <div class="builder-discount-amount">-<span id="discountAmount">0</span>₽</div>
-                        </div>
 
-                        <!-- Прогресс до скидки -->
-                        <div class="builder-discount-progress" id="discountProgress">
-                            <div class="discount-progress-text">
-                                Добавьте еще <span id="servicesNeeded">3</span> услуг для скидки 10%
+                            <div class="summary-discount hidden" id="discountBlock">
+                                <span class="discount-icon">🏷️</span>
+                                <span>Скидка <span id="discountPercent">0</span>% (−<span id="discountAmount">0</span>₽)</span>
                             </div>
-                            <div class="discount-progress-bar">
-                                <div class="discount-progress-fill" id="progressFill" style="width: 0%"></div>
+
+                            <div class="summary-progress-text" id="discountProgressText">
+                                Ещё <span id="servicesNeeded">2</span> для скидки
                             </div>
                         </div>
 
-                        <!-- Итоговая цена -->
-                        <div class="builder-total">
-                            <div class="builder-total-row">
-                                <span class="builder-total-label">Базовая стоимость:</span>
-                                <span class="builder-total-base" id="basePrice">0₽</span>
+                        <div class="summary-main">
+                            <div class="summary-price-group">
+                                <div class="summary-old-price" id="basePrice">0₽</div>
+                                <div class="summary-total-price" id="builderTotalPrice">0₽</div>
                             </div>
-                            <div class="builder-total-row builder-total-final">
-                                <span class="builder-total-label">Итого:</span>
-                                <span class="builder-total-price" id="builderTotalPrice">0₽</span>
-                            </div>
-                        </div>
 
-                        <!-- CTA кнопка -->
-                        <button class="btn btn-primary btn-full builder-cta" id="orderBtn" onclick="orderCampaign()" disabled>
-                            Выберите хотя бы одну услугу
-                        </button>
+                            <button class="btn btn-primary builder-cta-compact" id="orderBtn" onclick="orderCampaign()" disabled>
+                                Обсудить
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -1488,24 +1467,24 @@
 
             // Update discount block
             const discountBlock = document.getElementById('discountBlock');
-            const discountProgress = document.getElementById('discountProgress');
+            const progressText = document.getElementById('discountProgressText');
 
             if (discountPercent > 0) {
                 discountBlock.classList.remove('hidden');
-                discountProgress.classList.add('hidden');
+                if (progressText) progressText.style.display = 'none';
+
                 document.getElementById('discountPercent').textContent = discountPercent;
                 document.getElementById('discountAmount').textContent = discountAmount.toLocaleString('ru-RU');
             } else {
                 discountBlock.classList.add('hidden');
-                discountProgress.classList.remove('hidden');
+                if (progressText) progressText.style.display = 'block';
 
-                // Calculate progress to next discount
+                // Calculate needed services
                 const nextThreshold = discountThresholds[0];
-                const servicesNeeded = nextThreshold.count - count;
-                const progressPercent = Math.min(100, (count / nextThreshold.count) * 100);
+                const servicesNeeded = Math.max(0, nextThreshold.count - count);
 
-                document.getElementById('servicesNeeded').textContent = servicesNeeded;
-                document.getElementById('progressFill').style.width = `${progressPercent}%`;
+                const neededEl = document.getElementById('servicesNeeded');
+                if (neededEl) neededEl.textContent = servicesNeeded;
             }
 
             // Update total price
@@ -1515,10 +1494,10 @@
             const orderBtn = document.getElementById('orderBtn');
             if (count > 0) {
                 orderBtn.disabled = false;
-                orderBtn.textContent = `Обсудить кампанию — ${totalPrice.toLocaleString('ru-RU')}₽`;
+                orderBtn.textContent = 'Обсудить';
             } else {
                 orderBtn.disabled = true;
-                orderBtn.textContent = 'Выберите хотя бы одну услугу';
+                orderBtn.textContent = 'Выберите услуги';
             }
 
             // Update mobile sticky bar

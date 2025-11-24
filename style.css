@@ -1428,7 +1428,7 @@ section {
 .builder-group:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
-  padding-bottom: 280px;
+  padding-bottom: 120px;
 }
 
 .builder-platform-header {
@@ -1621,32 +1621,6 @@ section {
 }
 
 /* Total price */
-.builder-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-20);
-  background: var(--gradient-dark);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-16);
-}
-
-.builder-total-label {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.builder-total-price {
-  font-family: var(--font-display);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-extrabold);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .builder-cta {
   margin-bottom: 0;
 }
@@ -1791,7 +1765,7 @@ section {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   margin: 0 calc(var(--space-32) * -1) calc(var(--space-32) * -1);
-  padding: var(--space-24) var(--space-32);
+  padding: var(--space-16) var(--space-32);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   position: sticky;
   bottom: 0;
@@ -1803,7 +1777,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
 }
 
 .builder-counter-label {
@@ -1813,7 +1787,7 @@ section {
 
 .builder-counter-value {
   font-family: var(--font-display);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
@@ -1823,11 +1797,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-12) var(--space-16);
+  padding: var(--space-8) var(--space-12);
   background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
   border: 1px solid rgba(76, 175, 80, 0.3);
   border-radius: var(--radius-md);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
   animation: discountAppear 0.4s var(--ease-out);
 }
 
@@ -1911,14 +1885,14 @@ section {
 
 /* Total section */
 .builder-total {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
 }
 
 .builder-total-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-8) 0;
+  padding: var(--space-4) 0;
 }
 
 .builder-total-label {
@@ -1935,21 +1909,21 @@ section {
 }
 
 .builder-total-final {
-  padding-top: var(--space-12);
+  padding-top: var(--space-8);
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
 }
 
 .builder-total-final .builder-total-label {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
 }
 
 .builder-total-price {
   font-family: var(--font-display);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3354,4 +3328,112 @@ textarea.form-control {
   .trust-item {
     padding: var(--space-20);
   }
+}
+
+/* === COMPACT BUILDER SUMMARY === */
+
+/* Сжимаем сам контейнер */
+.builder-summary {
+  padding: var(--space-16) var(--space-24);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  margin: 0 calc(var(--space-32) * -1) calc(var(--space-32) * -1);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* Верхняя строка (инфо) */
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.summary-info {
+  font-weight: var(--font-weight-medium);
+}
+
+.summary-discount {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-discount.hidden {
+  display: none;
+}
+
+.summary-progress-text {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+/* Основная строка (Цена + Кнопка) */
+.summary-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+/* Группа цен слева */
+.summary-price-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+
+.summary-old-price {
+  font-size: var(--font-size-xs);
+  text-decoration: line-through;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+.summary-total-price {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Кнопка справа */
+.builder-cta-compact {
+  margin: 0;
+  padding: var(--space-12) var(--space-24);
+  flex-grow: 1;
+  max-width: 200px;
+  height: 48px;
+}
+
+.builder-cta-compact:disabled {
+  background: var(--color-bg);
+  color: var(--color-text-light);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Скрываем старые элементы */
+.builder-total,
+.builder-discount-progress,
+.builder-counter,
+.builder-discount {
+  display: none !important;
 }
