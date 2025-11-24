@@ -34,12 +34,12 @@
   --gradient-accent: linear-gradient(135deg, #FF7043 0%, #FF5677 100%);
   --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #2D2D4A 100%);
   
-  /* Тени - премиум */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.2);
-  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.24);
+  /* Тени - премиум (мягкие) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-2xl: 0 16px 48px rgba(0, 0, 0, 0.15);
   --shadow-glow: 0 10px 20px -5px rgba(255, 87, 34, 0.25);
   --shadow-glow-hover: 0 15px 30px -5px rgba(255, 87, 34, 0.3);
   
@@ -545,7 +545,7 @@ section {
 
 .metric-card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: var(--space-32);
   box-shadow: var(--shadow-md);
   transition: all var(--duration-normal) var(--ease-in-out);
@@ -571,7 +571,7 @@ section {
 
 .metric-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .metric-card:focus {
@@ -649,7 +649,7 @@ section {
 
 .audience-card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: var(--space-32);
   box-shadow: var(--shadow-md);
   transition: all var(--duration-normal) var(--ease-in-out);
@@ -832,7 +832,7 @@ section {
 
 .format-card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: var(--space-32);
   box-shadow: var(--shadow-md);
   transition: all var(--duration-normal) var(--ease-in-out);
@@ -851,7 +851,7 @@ section {
 
 .format-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
   border-color: var(--color-primary);
 }
 
@@ -957,7 +957,7 @@ section {
 
 .package-card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: var(--space-24);
   padding-top: var(--space-40);
   box-shadow: var(--shadow-md);
@@ -975,7 +975,7 @@ section {
 
 .package-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
   border-color: var(--color-primary);
 }
 
@@ -1031,7 +1031,7 @@ section {
 
 .package-dominator:hover {
   transform: scale(1.11);
-  box-shadow: 0 12px 48px rgba(255, 215, 0, 0.35), var(--shadow-2xl);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.3), var(--shadow-xl);
 }
 
 .package-dominator .package-icon {
@@ -1400,7 +1400,7 @@ section {
 
 .builder-controls {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: var(--space-32);
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -2837,7 +2837,7 @@ section {
 
 .case-card {
   background: white;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all var(--duration-normal) var(--ease-in-out);
@@ -2855,7 +2855,7 @@ section {
 
 .case-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .case-image {
@@ -3076,7 +3076,7 @@ section {
   padding: var(--space-32);
   background: rgba(255, 255, 255, 0.08);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
