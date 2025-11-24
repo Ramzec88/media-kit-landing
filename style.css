@@ -1427,8 +1427,8 @@ section {
 
 .builder-group:last-of-type {
   border-bottom: none;
-  margin-bottom: var(--space-16);
-  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 280px;
 }
 
 .builder-platform-header {
