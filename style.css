@@ -797,7 +797,8 @@ section {
 }
 
 .interest-icon {
-  font-size: 32px;
+  width: 32px;
+  height: 32px;
   display: block;
   margin-bottom: var(--space-8);
 }
@@ -806,6 +807,14 @@ section {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+}
+
+.section-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 /* === FORMATS СЕКЦИЯ === */
@@ -1030,6 +1039,11 @@ section {
   filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.4));
 }
 
+.package-dominator .package-icon svg {
+  width: 56px;
+  height: 56px;
+}
+
 .package-dominator .package-title {
   font-size: calc(var(--font-size-xl) * 1.15);
   background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
@@ -1103,6 +1117,13 @@ section {
   font-size: 48px;
   margin-bottom: var(--space-12);
   display: block;
+}
+
+.package-icon svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
 }
 
 .package-title {
