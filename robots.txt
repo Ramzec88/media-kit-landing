@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mishka-max.ru/sitemap.xml
