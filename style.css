@@ -3437,3 +3437,166 @@ textarea.form-control {
 .builder-discount {
   display: none !important;
 }
+
+/* === FIX: AUDIENCE SECTION === */
+
+/* 1. Карточка "Ядро аудитории" (Левая) */
+.audience-segment {
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-12);
+  border: 1px solid transparent;
+}
+
+.audience-segment:last-child {
+  margin-bottom: 0;
+}
+
+/* Оранжевый блок (Родители) */
+.segment-orange {
+  background: rgba(255, 87, 34, 0.08);
+  border-color: rgba(255, 87, 34, 0.15);
+}
+
+/* Синий блок (Педагоги) */
+.segment-blue {
+  background: rgba(33, 150, 243, 0.08);
+  border-color: rgba(33, 150, 243, 0.15);
+}
+
+.segment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.segment-icon {
+  font-size: 20px;
+}
+
+.segment-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.segment-badge {
+  margin-left: auto;
+  background: rgba(33, 150, 243, 0.15);
+  color: #1976D2;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+}
+
+.segment-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.segment-list {
+  font-size: 13px;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  padding-left: var(--space-8);
+}
+
+/* 2. Карточка "Интересы" (Центральная) */
+/* Исправляем сетку, чтобы длинные слова не ломали верстку */
+.interests-grid {
+  display: grid;
+  /* Было 80px, стало 110px — это даст больше места тексту */
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: var(--space-12);
+}
+
+.interest-item {
+  padding: var(--space-16) var(--space-8); /* Больше воздуха сверху/снизу */
+  height: 100%; /* Одинаковая высота */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.interest-name {
+  font-size: 13px; /* Чуть меньше шрифт для длинных слов */
+  line-height: 1.3;
+}
+
+/* Бейдж NEW */
+.interest-badge-new {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(255, 87, 34, 0.3);
+  z-index: 2;
+}
+
+/* 3. Карточка "География" (Правая) */
+.geo-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.geo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.geo-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.geo-flag {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.geo-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  font-size: 15px;
+}
+
+.geo-badge {
+  margin-left: auto;
+  background: rgba(255, 87, 34, 0.1);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.geo-note {
+  margin-top: var(--space-20);
+  padding: var(--space-16);
+  background: rgba(76, 175, 80, 0.08); /* Зеленоватый оттенок для "Одобрено" */
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(76, 175, 80, 0.15);
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+.geo-note-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2E7D32; /* Темно-зеленый текст */
+}
