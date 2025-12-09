@@ -1224,7 +1224,15 @@
 
     <script>
         function downloadMediaKit() {
-            alert('Скоро будет доступна загрузка медиа-кита!');
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = 'mediakit-mishka-max.pdf';
+            link.download = 'mediakit-mishka-max.pdf';
+
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         function scrollToContact() {
