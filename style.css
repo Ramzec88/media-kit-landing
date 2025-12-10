@@ -3168,7 +3168,7 @@ textarea.form-control {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: 6px;
 }
 
 .footer-links a {
@@ -3655,27 +3655,29 @@ textarea.form-control {
   text-align: center;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-32);
-  margin-bottom: var(--space-20);
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color var(--duration-fast) var(--ease-in-out);
-}
-
-.footer-links a:hover {
-  color: var(--color-primary);
-}
-
 .footer-copyright {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* Класс для объединения ссылок в одну строку */
+.footer-legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.footer-legal-links a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-primary);
 }
 
