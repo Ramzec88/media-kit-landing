@@ -239,21 +239,26 @@
         .avatar {
             width: 160px;
             height: 160px;
-            background: linear-gradient(135deg, var(--orange) 0%, #FFB84D 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 24px;
-            font-size: 90px;
-            box-shadow: 
+            box-shadow:
                 0 12px 48px rgba(255, 169, 77, 0.4),
                 0 0 0 8px var(--white),
-                0 0 0 12px rgba(255, 255, 255, 0.5),
-                inset 0 -8px 20px rgba(0,0,0,0.1);
+                0 0 0 12px rgba(255, 255, 255, 0.5);
             border: 4px solid var(--white);
             animation: pulse-bear 3s ease-in-out infinite;
             position: relative;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .avatar::before {
@@ -551,7 +556,7 @@
             .link-title { font-size: 18px; }
             .link-desc { font-size: 13px; line-height: 1.2; }
             .link-button { padding: 15px 16px; }
-            .avatar { width: 120px; height: 120px; font-size: 70px; }
+            .avatar { width: 120px; height: 120px; }
             .emoji-line { font-size: 30px; letter-spacing: 8px; }
         }
 
@@ -598,7 +603,9 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="avatar">🐻</div>
+            <div class="avatar">
+                <img src="images/logo_me.gif" alt="Мишка Макс">
+            </div>
             <h1 class="title">
                 <span class="title-mishka">МИШКА</span>
                 <span class="title-max">МАКС</span>
