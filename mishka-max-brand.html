@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105821243', 'ym');
+
+        ym(105821243, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/105821243" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мишка Макс — Детские Истории и Приключения</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #52B8E8;
+            --sky-blue-light: #7DD3FF;
+            --sky-blue-dark: #3B9FD8;
+            --red: #FF3B3B;
+            --red-dark: #E63946;
+            --yellow: #FFD23F;
+            --orange: #FFA94D;
+            --white: #FFFFFF;
+            --cloud-white: #F8F9FA;
+            --text-dark: #2C3E50;
+            --shadow: rgba(59, 130, 246, 0.2);
+            --shadow-strong: rgba(59, 130, 246, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(180deg, #7DD3FF 0%, var(--sky-blue) 50%, #3B9FD8 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative clouds */
+        .cloud {
+            position: fixed;
+            background: var(--white);
+            border-radius: 100px;
+            opacity: 0.9;
+            z-index: 1;
+            pointer-events: none;
+            box-shadow: 
+                0 8px 32px rgba(255, 255, 255, 0.3),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: var(--white);
+            border-radius: 100px;
+        }
+
+        .cloud-1 {
+            width: 120px;
+            height: 50px;
+            top: 10%;
+            left: 5%;
+            animation: float-slow 25s ease-in-out infinite;
+        }
+
+        .cloud-1::before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud-1::after {
+            width: 80px;
+            height: 50px;
+            top: -20px;
+            right: 10px;
+        }
+
+        .cloud-2 {
+            width: 100px;
+            height: 40px;
+            top: 25%;
+            right: 8%;
+            animation: float-slow 30s ease-in-out infinite 5s;
+        }
+
+        .cloud-2::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud-2::after {
+            width: 70px;
+            height: 40px;
+            top: -15px;
+            right: 8px;
+        }
+
+        .cloud-3 {
+            width: 140px;
+            height: 55px;
+            bottom: 15%;
+            left: 10%;
+            animation: float-slow 35s ease-in-out infinite 10s;
+        }
+
+        .cloud-3::before {
+            width: 70px;
+            height: 70px;
+            top: -35px;
+            left: 20px;
+        }
+
+        .cloud-3::after {
+            width: 90px;
+            height: 55px;
+            top: -25px;
+            right: 15px;
+        }
+
+        @keyframes float-slow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -15px); }
+        }
+
+        /* Decorative stars */
+        .star {
+            position: fixed;
+            font-size: 32px;
+            z-index: 1;
+            pointer-events: none;
+            filter: drop-shadow(0 4px 8px rgba(255, 210, 63, 0.4));
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        .star:nth-child(2n) { animation-delay: 1s; }
+        .star:nth-child(3n) { animation-delay: 2s; }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.15) rotate(10deg); opacity: 0.8; }
+        }
+
+        /* Balloons */
+        .balloon {
+            position: fixed;
+            font-size: 36px;
+            z-index: 1;
+            pointer-events: none;
+            animation: float-balloon 20s ease-in-out infinite;
+        }
+
+        @keyframes float-balloon {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-30px) rotate(3deg); }
+        }
+
+        /* Music notes */
+        .note {
+            position: fixed;
+            font-size: 28px;
+            z-index: 1;
+            pointer-events: none;
+            animation: bounce-note 4s ease-in-out infinite;
+        }
+
+        @keyframes bounce-note {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.08); }
+            70% { transform: scale(0.92); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, var(--orange) 0%, #FFB84D 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 90px;
+            box-shadow: 
+                0 12px 48px rgba(255, 169, 77, 0.4),
+                0 0 0 8px var(--white),
+                0 0 0 12px rgba(255, 255, 255, 0.5),
+                inset 0 -8px 20px rgba(0,0,0,0.1);
+            border: 4px solid var(--white);
+            animation: pulse-bear 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .avatar::before {
+            content: '🧢';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 50px;
+            filter: drop-shadow(0 4px 12px rgba(255, 59, 59, 0.4));
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-bear {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            text-shadow: 
+                3px 3px 0 var(--white),
+                -1px -1px 0 var(--white),
+                1px -1px 0 var(--white),
+                -1px 1px 0 var(--white),
+                3px 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .title-mishka {
+            color: var(--red);
+            display: block;
+        }
+
+        .title-max {
+            color: var(--sky-blue-dark);
+            display: block;
+        }
+
+        .subtitle {
+            font-family: 'Nunito', sans-serif;
+            font-size: 19px;
+            color: var(--text-dark);
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .description {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        .emoji-line {
+            font-size: 36px;
+            letter-spacing: 12px;
+            margin-top: 16px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link-button {
+            position: relative;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 20px 24px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 
+                0 6px 24px var(--shadow),
+                0 2px 8px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+            animation: slideIn 0.6s ease-out backwards;
+            border: 3px solid transparent;
+        }
+
+        .link-button:nth-child(1) { animation-delay: 0.1s; }
+        .link-button:nth-child(2) { animation-delay: 0.2s; }
+        .link-button:nth-child(3) { animation-delay: 0.3s; }
+        .link-button:nth-child(4) { animation-delay: 0.4s; }
+        .link-button:nth-child(5) { animation-delay: 0.5s; }
+        .link-button:nth-child(6) { animation-delay: 0.6s; }
+        .link-button:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px) rotate(-2deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 100%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            border-radius: 28px;
+        }
+
+        .link-button:hover {
+            transform: translateY(-8px) scale(1.02) rotate(-1deg);
+            box-shadow: 
+                0 16px 48px var(--shadow-strong),
+                0 4px 16px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255,255,255,1);
+            border-color: var(--yellow);
+        }
+
+        .link-button:hover::before {
+            opacity: 1;
+        }
+
+        .link-button:active {
+            transform: translateY(-4px) scale(0.98);
+        }
+
+        .link-icon {
+            position: relative;
+            z-index: 1;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-dark) 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 
+                0 6px 16px rgba(82, 184, 232, 0.35),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .link-button:hover .link-icon {
+            transform: scale(1.15) rotate(-8deg);
+            box-shadow: 
+                0 8px 24px rgba(82, 184, 232, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .link-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+        }
+
+        .link-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .link-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .link-button:hover .link-title {
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .link-desc {
+            font-size: 14px;
+            color: #5A6C7D;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover .link-desc {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Featured button */
+        .link-button.featured {
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+            border: 4px solid var(--white);
+            box-shadow: 
+                0 8px 32px rgba(255, 59, 59, 0.45),
+                0 4px 12px rgba(0, 0, 0, 0.15),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .link-button.featured::before {
+            background: linear-gradient(135deg, var(--red-dark) 0%, #C62828 100%);
+        }
+
+        .link-button.featured .link-title,
+        .link-button.featured .link-desc {
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-button.featured .link-icon {
+            background: var(--white);
+        }
+
+        .link-button.featured .link-icon svg {
+            fill: var(--red);
+        }
+
+        .link-button.featured:hover {
+            transform: translateY(-10px) scale(1.03) rotate(-1deg);
+            box-shadow: 
+                0 20px 56px rgba(255, 59, 59, 0.6),
+                0 6px 20px rgba(0, 0, 0, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            border-color: var(--yellow);
+        }
+
+        .link-button.featured:hover .link-icon {
+            background: var(--yellow);
+        }
+
+        .link-button.featured:hover .link-icon svg {
+            fill: var(--red-dark);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .footer-text {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .paw-prints {
+            font-size: 28px;
+            letter-spacing: 16px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .title { font-size: 42px; }
+            .avatar { width: 140px; height: 140px; font-size: 80px; }
+            .avatar::before { font-size: 42px; top: -15px; right: 15px; }
+            .link-button { padding: 18px 20px; gap: 16px; }
+            .link-icon { width: 52px; height: 52px; }
+            .cloud-1, .cloud-2, .cloud-3 { opacity: 0.6; }
+        }
+
+        @media (max-width: 380px) {
+            .title { font-size: 36px; }
+            .emoji-line { font-size: 30px; letter-spacing: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <!-- Decorative elements -->
+    <div class="star" style="top: 12%; left: 15%;">⭐</div>
+    <div class="star" style="top: 20%; right: 12%;">⭐</div>
+    <div class="star" style="bottom: 25%; left: 10%;">⭐</div>
+    <div class="star" style="bottom: 40%; right: 15%;">⭐</div>
+    <div class="star" style="top: 55%; left: 8%;">⭐</div>
+
+    <div class="balloon" style="top: 15%; right: 8%;">🎈</div>
+    <div class="balloon" style="bottom: 30%; left: 12%; animation-delay: 2s;">🎈</div>
+
+    <div class="note" style="top: 35%; right: 10%;">🎵</div>
+    <div class="note" style="bottom: 18%; right: 8%; animation-delay: 1.5s;">🎶</div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="avatar">🐻</div>
+            <h1 class="title">
+                <span class="title-mishka">МИШКА</span>
+                <span class="title-max">МАКС</span>
+            </h1>
+            <p class="subtitle">Добрые мультики, песенки и развивающие материалы 📚</p>
+            <div class="emoji-line">🎨 🎵 🎬</div>
+        </header>
+
+        <!-- Links -->
+        <div class="links">
+            <a href="#" class="link-button featured">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.5l6 5.5v7.5h-2v-6H8v6H6V11l6-5.5z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">МИШКА МАКС: КЛАДОВАЯ ПЕДАГОГА 🗝️</div>
+                    <div class="link-desc">Сценарии, минусовки и материалы для занятий</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-button">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">YOUTUBE (СМОТРЕТЬ НА ТВ) 📺</div>
+                    <div class="link-desc">Все серии подряд в хорошем качестве</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-button">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">INSTAGRAM (ГЛАВНЫЙ БЛОГ) 🌟</div>
+                    <div class="link-desc">Нас здесь больше всего! Свежие рилс каждый день</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-button">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.37-.1.56-.34.56-.21 0-.59-.07-.88-.13-.36-.07-.64-.11-.62-.24.02-.13.42-.27.62-.39 2.42-1.06 4.03-1.76 4.83-2.11 2.3-.96 2.78-.96 3.09-.96.07 0 .22.02.32.12.08.08.1.19.11.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">TELEGRAM-КАНАЛ</div>
+                    <div class="link-desc">Самый уютный канал. Видео, новости и общение</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-button">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">TIK TOK</div>
+                    <div class="link-desc">Залипаем вместе! Самые смешные моменты</div>
+                </div>
+            </a>
+
+            <a href="#" class="link-button">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">САЙТ MISHKA-MAX.RU 💼</div>
+                    <div class="link-desc">Информация для рекламодателей и партнеров</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Подписывайся на все каналы! 🐻💛</p>
+            <div class="paw-prints">🐾 🐾 🐾</div>
+        </footer>
+    </div>
+</body>
+</html>
