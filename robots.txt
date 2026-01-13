@@ -1,3 +1,54 @@
+# robots.txt для mishka-max.ru
+# Создан: январь 2026
+
+# Основные правила для всех поисковых роботов
 User-agent: *
 Allow: /
-Sitemap: https://mishka-max.ru/sitemap.xml
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /tmp/
+
+# Разрешаем индексацию основных ресурсов
+Allow: /images/
+Allow: /style.css
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Правила для медиа-контента
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Yandex-Images
+Allow: /images/
+
+# Блокируем агрессивных ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Ссылка на карту сайта (когда создашь)
+# Sitemap: https://mishka-max.ru/sitemap.xml
+
+# Основной URL сайта
+Host: mishka-max.ru
