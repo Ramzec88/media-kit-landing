@@ -601,12 +601,25 @@
 
         .link-button.partnership .link-content { padding-right: 0; }
 
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .link-button.partnership .link-title {
+            margin-bottom: 0;
+        }
+
         .reach-badge.static-badge {
             position: relative;
             top: auto;
             right: auto;
             display: inline-block;
-            margin-bottom: 4px;
+            margin-bottom: 0;
+            white-space: nowrap;
         }
 
         .link-button.partnership:hover {
@@ -1055,8 +1068,10 @@
                     </svg>
                 </div>
                 <div class="link-content">
-                    <div class="reach-badge static-badge">326К+ подписчиков</div>
-                    <div class="link-title">СОТРУДНИЧЕСТВО</div>
+                    <div class="title-wrapper">
+                        <div class="link-title">СОТРУДНИЧЕСТВО</div>
+                        <div class="reach-badge static-badge">374К+ подписчиков</div>
+                    </div>
                     <div class="link-desc">Интеграции, партнёрства, медиакит</div>
                 </div>
             </a>
